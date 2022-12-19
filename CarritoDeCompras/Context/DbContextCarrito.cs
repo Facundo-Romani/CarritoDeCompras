@@ -21,8 +21,6 @@ namespace CarritoDeCompras.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {       
            
-
-
             modelBuilder.Entity<Carrito>().ToTable("Carrito");
             modelBuilder.Entity<CarroPromocional>().ToTable("CarroPromocional");
             modelBuilder.Entity<CarroVip>().ToTable("CarroVip");
