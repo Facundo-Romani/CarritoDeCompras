@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarritoDeCompras.Migrations
 {
     [DbContext(typeof(DbContextCarrito))]
-    [Migration("20221219190832_CarritoDeCompras")]
+    [Migration("20221219210719_CarritoDeCompras")]
     partial class CarritoDeCompras
     {
         /// <inheritdoc />
@@ -39,9 +39,6 @@ namespace CarritoDeCompras.Migrations
                     b.Property<decimal>("Total")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.Property<int>("idUsuario")
                         .HasColumnType("int");
 
@@ -50,7 +47,7 @@ namespace CarritoDeCompras.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("idUsuario");
 
                     b.ToTable("Carrito", (string)null);
 
@@ -146,7 +143,7 @@ namespace CarritoDeCompras.Migrations
                 {
                     b.HasOne("CarritoDeCompras.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId")
+                        .HasForeignKey("idUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

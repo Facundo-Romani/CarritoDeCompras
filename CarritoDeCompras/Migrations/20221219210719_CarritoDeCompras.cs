@@ -50,15 +50,14 @@ namespace CarritoDeCompras.Migrations
                     Cantidad = table.Column<int>(type: "int", nullable: false),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     totalDescuento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    idUsuario = table.Column<int>(type: "int", nullable: false),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false)
+                    idUsuario = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Carrito", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Carrito_Usuario_UsuarioId",
-                        column: x => x.UsuarioId,
+                        name: "FK_Carrito_Usuario_idUsuario",
+                        column: x => x.idUsuario,
                         principalTable: "Usuario",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -119,9 +118,9 @@ namespace CarritoDeCompras.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carrito_UsuarioId",
+                name: "IX_Carrito_idUsuario",
                 table: "Carrito",
-                column: "UsuarioId");
+                column: "idUsuario");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Producto_CarritoId",

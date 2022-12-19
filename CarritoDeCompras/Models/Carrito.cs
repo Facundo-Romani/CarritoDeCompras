@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarritoDeCompras.Models
 {
@@ -16,9 +17,10 @@ namespace CarritoDeCompras.Models
         [Required]
         public decimal totalDescuento { get; set;}
 
-        // Prop Navegación.
+        // Prop Navegación. 
         public int idUsuario { get; set; }
-        
+
+        [ForeignKey("idUsuario")]
         public Usuario Usuario { get; set;}
         
         public ICollection<Producto> Productos { get; set; }
