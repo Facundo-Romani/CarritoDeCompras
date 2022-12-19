@@ -20,12 +20,9 @@ namespace CarritoDeCompras.Models
         public int idUsuario { get; set; }
         
         public Usuario Usuario { get; set;}
-
-        public int idProducto { get; set; }
         
         public ICollection<Producto> Productos { get; set; }
-
-       
+  
         public Carrito(int idUsuario)
         {
             this.idUsuario = idUsuario;

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarritoDeCompras.Migrations
 {
     [DbContext(typeof(DbContextCarrito))]
-    [Migration("20221211190033_CarritoDeCompras")]
+    [Migration("20221219190832_CarritoDeCompras")]
     partial class CarritoDeCompras
     {
         /// <inheritdoc />
@@ -40,9 +40,6 @@ namespace CarritoDeCompras.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idProducto")
                         .HasColumnType("int");
 
                     b.Property<int>("idUsuario")

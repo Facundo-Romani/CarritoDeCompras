@@ -40,10 +40,9 @@ namespace CarritoDeCompras.Services
             else if(carrito.Cantidad > 10 && carrito is CarroVip)
             {
                 carrito.Productos = _context.Productos.OrderBy(p => p.Precio).ToList(); 
-
-                carrito.totalDescuento = carrito.Total - Convert.ToDecimal(carrito.Productos) - 3000; 
+                // Corrección obtengo el precio de la lista y luego lo guardo para restar el total. 
             }
-
+            
             _context.Carritos.Update(carrito);
             _context.SaveChanges();
 

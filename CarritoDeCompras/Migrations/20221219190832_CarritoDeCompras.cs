@@ -51,8 +51,7 @@ namespace CarritoDeCompras.Migrations
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     totalDescuento = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     idUsuario = table.Column<int>(type: "int", nullable: false),
-                    UsuarioId = table.Column<int>(type: "int", nullable: false),
-                    idProducto = table.Column<int>(type: "int", nullable: false)
+                    UsuarioId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

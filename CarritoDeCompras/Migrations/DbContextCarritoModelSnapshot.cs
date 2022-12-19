@@ -39,9 +39,6 @@ namespace CarritoDeCompras.Migrations
                     b.Property<int>("UsuarioId")
                         .HasColumnType("int");
 
-                    b.Property<int>("idProducto")
-                        .HasColumnType("int");
-
                     b.Property<int>("idUsuario")
                         .HasColumnType("int");
 

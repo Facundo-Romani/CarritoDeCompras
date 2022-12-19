@@ -12,5 +12,6 @@ namespace CarritoDeCompras.Models
         
         [Required]
         public decimal Precio { get; set;  }
+
     }
 }
